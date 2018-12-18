@@ -1,0 +1,14 @@
+FROM seabaylea/openliberty-template
+
+COPY . /app/src/main/java/
+
+RUN mvn -Dmaven.repo.local=/mvn/.m2nrepo/repository package
+
+RUN mkdir /config \
+    && cp /app/target/serverless.zip /config/ \
+    && unzip /config/serverless.zip \
+    && mv /app/wlp/usr/servers/GettingStartedServer/* /config/
+
+FROM open-liberty
+COPY --from=0 /config/ /config/
+EXPOSE 9080 9443
