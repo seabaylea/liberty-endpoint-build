@@ -14,6 +14,5 @@ RUN mkdir /config \
 FROM open-liberty
 COPY --from=0 /config/ /config/
 
-ENV WLP_USER_DIR /config
 ENV PORT 8080
 EXPOSE $PORT 9443
