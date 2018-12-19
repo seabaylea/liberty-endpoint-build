@@ -11,4 +11,4 @@ RUN mkdir /config \
 
 FROM open-liberty
 COPY --from=0 /config/ /config/
-EXPOSE 9080 9443
+EXPOSE 8080 9443
