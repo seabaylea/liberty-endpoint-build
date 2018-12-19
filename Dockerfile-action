@@ -1,5 +1,7 @@
 FROM seabaylea/openliberty-template
 
+WORKDIR "/app"
+
 COPY . /app/src/main/java/
 
 RUN mvn -Dmaven.repo.local=/mvn/.m2nrepo/repository package
