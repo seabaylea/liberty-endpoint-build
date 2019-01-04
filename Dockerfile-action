@@ -13,7 +13,6 @@ RUN mkdir -p /opt/ol/wlp/usr/servers/defaultServer \
     && mv /app/wlp/usr/servers/GettingStartedServer/* /config/
 
 FROM open-liberty
-RUN ln -s /opt/ol/wlp/usr/servers/defaultServer /config
 COPY --from=0 /config/ /config/
 
 ENV PORT 8080
