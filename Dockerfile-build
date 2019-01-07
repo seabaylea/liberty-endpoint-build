@@ -1,0 +1,13 @@
+FROM seabaylea/openliberty-template as build
+
+WORKDIR "/app"
+
+COPY . /app/src/main/java/
+
+RUN mvn -Dmaven.repo.local=/mvn/.m2nrepo/repository package
+
+RUN mkdir -p /opt/ol/wlp/usr/servers/defaultServer \
+    && ln -s /opt/ol/wlp/usr/servers/defaultServer /workspace/config \
+    && cp /app/target/serverless.zip /workspace/config/ \
+    && unzip /workspace/config/serverless.zip \
+    && mv /app/wlp/usr/servers/GettingStartedServer/* /workspace/config/
