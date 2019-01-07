@@ -1,0 +1,7 @@
+FROM open-liberty
+COPY ./config/ /config
+RUN ls /
+RUN ls /config
+
+ENV PORT 8080
+EXPOSE $PORT 9443
