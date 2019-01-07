@@ -11,4 +11,4 @@ RUN mkdir -p /opt/ol/wlp/usr/servers/defaultServer \
     && cp /app/target/serverless.zip /config/ \
     && unzip /workspace/config/serverless.zip \
     && mv /app/wlp/usr/servers/GettingStartedServer/* /config/ \
-    ** cp -rf /config/* /workspace
+    && cp -rf /config/* /workspace
