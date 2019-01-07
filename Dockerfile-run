@@ -1,6 +1,6 @@
 FROM open-liberty
 RUN ln -s /opt/ol/wlp/usr/servers/defaultServer /config
-COPY /workspace/ /config
+RUN cp -rf /workspace/* /config
 RUN ls /config
 
 ENV PORT 8080
