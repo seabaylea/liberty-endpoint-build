@@ -13,7 +13,7 @@ RUN mkdir -p /opt/ol/wlp/usr/servers/defaultServer \
     && mv /app/wlp/usr/servers/GettingStartedServer/* /config/
 
 FROM open-liberty
-COPY --from=0 /config /config
+COPY --from=0 /config /
 
 ENV PORT 8080
 EXPOSE $PORT 9443
