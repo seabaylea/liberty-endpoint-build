@@ -9,6 +9,6 @@ RUN mvn -Dmaven.repo.local=/mvn/.m2nrepo/repository package
 RUN mkdir -p /opt/ol/wlp/usr/servers/defaultServer \
     && ln -s /opt/ol/wlp/usr/servers/defaultServer /config \
     && cp /app/target/serverless.zip /config/ \
-    && unzip /workspace/config/serverless.zip \
+    && unzip /config/serverless.zip \
     && mv /app/wlp/usr/servers/GettingStartedServer/* /config/ \
     && cp -rf /config/* /workspace
